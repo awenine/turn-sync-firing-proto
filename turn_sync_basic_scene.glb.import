@@ -31,6 +31,19 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:LowWall": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
+"PATH:Player01": {
+"generate/physics": true
+},
+"PATH:Player02": {
+"generate/physics": true
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1
