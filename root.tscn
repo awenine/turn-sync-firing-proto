@@ -1,13 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfynfl5riijis"]
+[gd_scene load_steps=5 format=3 uid="uid://dfynfl5riijis"]
 
 [ext_resource type="PackedScene" uid="uid://bup3o20mil4wk" path="res://turn_sync_basic_scene.glb" id="1_ukeyy"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cs4p6"]
+sky_top_color = Color(0.702736, 0.718405, 0.924827, 1)
+sky_horizon_color = Color(0.725684, 0.721851, 0.764457, 1)
+ground_horizon_color = Color(0.725684, 0.721851, 0.764457, 1)
+
+[sub_resource type="Sky" id="Sky_2gdio"]
+sky_material = SubResource("ProceduralSkyMaterial_cs4p6")
+
+[sub_resource type="Environment" id="Environment_trerh"]
+background_mode = 2
+sky = SubResource("Sky_2gdio")
+tonemap_mode = 2
+glow_enabled = true
+
 [node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_trerh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
 
 [node name="turn_sync_basic_scene" parent="." instance=ExtResource("1_ukeyy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00951242, 0, -0.000184059)
 
 [node name="LowWall" parent="turn_sync_basic_scene" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69277, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.999333, 0, -0.0365216, 0, 1, 0, 0.0365216, 0, -0.999333, 0, 3.42751, -7.15393)
 
 [editable path="turn_sync_basic_scene"]
