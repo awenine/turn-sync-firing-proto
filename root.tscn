@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfynfl5riijis"]
+
+[ext_resource type="PackedScene" uid="uid://bup3o20mil4wk" path="res://turn_sync_basic_scene.glb" id="1_ukeyy"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="turn_sync_basic_scene" parent="." instance=ExtResource("1_ukeyy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00951242, 0, -0.000184059)
+
+[node name="LowWall" parent="turn_sync_basic_scene" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69277, 0, 0)
+
+[editable path="turn_sync_basic_scene"]
