@@ -96,6 +96,6 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_yo7ny")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.999333, 0, -0.0365216, 0, 1, 0, 0.0365216, 0, -0.999333, 0, 3.42751, -7.15393)
+transform = Transform3D(-0.531295, 0, 0.847187, 0, 1, 0, -0.847187, 0, -0.531295, 5, 3.42751, -5.15393)
 
 [editable path="turn_sync_basic_scene"]
