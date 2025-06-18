@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=4 uid="uid://dfynfl5riijis"]
+[gd_scene load_steps=11 format=4 uid="uid://dfynfl5riijis"]
 
 [ext_resource type="PackedScene" uid="uid://bup3o20mil4wk" path="res://turn_sync_basic_scene.glb" id="1_ukeyy"]
 [ext_resource type="Script" path="res://player_02.gd" id="2_0aiwo"]
+[ext_resource type="Script" path="res://ray_castt_3d.gd" id="3_fp44e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cs4p6"]
 sky_top_color = Color(0.702736, 0.718405, 0.924827, 1)
@@ -70,15 +71,16 @@ shadow_enabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00951242, 0, -0.000184059)
 
 [node name="Player02" parent="turn_sync_basic_scene" index="2"]
-transform = Transform3D(-0.96886, 0, -0.247608, 0, 1, 0, 0.247608, 0, -0.96886, 8, 1, 0)
+transform = Transform3D(0.047037, 0, -0.998893, 0, 1, 0, 0.998893, 0, 0.047037, 8, 1, 0)
 script = ExtResource("2_0aiwo")
 
 [node name="RayCast3D" type="RayCast3D" parent="turn_sync_basic_scene/Player02/StaticBody3D/CollisionShape3D" index="0"]
 transform = Transform3D(0.998125, 0, -0.0612053, 0, 1, 0, 0.0612053, 0, 0.998125, 0, 0.681259, 0)
-target_position = Vector3(100, 2, 2)
+target_position = Vector3(2, 2, 100)
 hit_back_faces = false
 debug_shape_custom_color = Color(0.917647, 0, 0, 1)
 debug_shape_thickness = 5
+script = ExtResource("3_fp44e")
 
 [node name="LowWall" parent="turn_sync_basic_scene" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69277, 0, 0)
