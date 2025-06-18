@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://dfynfl5riijis"]
+[gd_scene load_steps=10 format=4 uid="uid://dfynfl5riijis"]
 
 [ext_resource type="PackedScene" uid="uid://bup3o20mil4wk" path="res://turn_sync_basic_scene.glb" id="1_ukeyy"]
 [ext_resource type="Script" path="res://player_02.gd" id="2_0aiwo"]
-[ext_resource type="Script" path="res://ray_castt_3d.gd" id="3_fp44e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cs4p6"]
 sky_top_color = Color(0.702736, 0.718405, 0.924827, 1)
@@ -70,6 +69,16 @@ shadow_enabled = true
 [node name="turn_sync_basic_scene" parent="." instance=ExtResource("1_ukeyy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00951242, 0, -0.000184059)
 
+[node name="Player01" parent="turn_sync_basic_scene" index="1"]
+script = ExtResource("2_0aiwo")
+
+[node name="RayCast3D" type="RayCast3D" parent="turn_sync_basic_scene/Player01/StaticBody3D/CollisionShape3D" index="0"]
+transform = Transform3D(0.00855198, 0, 0.999963, 0, 1, 0, -0.999963, 0, 0.00855198, 0, 0.681259, 0)
+target_position = Vector3(2, 2, 100)
+hit_back_faces = false
+debug_shape_custom_color = Color(0.917647, 0, 0, 1)
+debug_shape_thickness = 5
+
 [node name="Player02" parent="turn_sync_basic_scene" index="2"]
 transform = Transform3D(0.047037, 0, -0.998893, 0, 1, 0, 0.998893, 0, 0.047037, 8, 1, 0)
 script = ExtResource("2_0aiwo")
@@ -80,10 +89,9 @@ target_position = Vector3(2, 2, 100)
 hit_back_faces = false
 debug_shape_custom_color = Color(0.917647, 0, 0, 1)
 debug_shape_thickness = 5
-script = ExtResource("3_fp44e")
 
 [node name="LowWall" parent="turn_sync_basic_scene" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69277, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69277, 0, -4)
 
 [node name="LargeWall" type="MeshInstance3D" parent="turn_sync_basic_scene"]
 transform = Transform3D(-0.998827, 0, -0.318272, 0, 9.0635, 0, 0.0484141, 0, -6.56625, -16.1874, -0.250629, 26.6303)
@@ -95,7 +103,17 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="turn_sync_basic_scene/LargeWall/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_yo7ny")
 
+[node name="LargeWall2" type="MeshInstance3D" parent="turn_sync_basic_scene"]
+transform = Transform3D(-0.998827, 0, -0.318272, 0, 9.0635, 0, 0.0484141, 0, -6.56625, 13.974, -0.250629, 26.6303)
+mesh = SubResource("ArrayMesh_v6x47")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="turn_sync_basic_scene/LargeWall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="turn_sync_basic_scene/LargeWall2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yo7ny")
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.531295, 0, 0.847187, 0, 1, 0, -0.847187, 0, -0.531295, 5, 3.42751, -5.15393)
+transform = Transform3D(-0.996387, 0, 0.0849301, 0, 1, 0, -0.0849301, 0, -0.996387, 1.48683, 3.42751, -12.66)
 
 [editable path="turn_sync_basic_scene"]

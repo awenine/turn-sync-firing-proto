@@ -33,6 +33,10 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "nodes": {
+"PATH:Ground": {
+"generate/physics": true,
+"physics/shape_type": 2
+},
 "PATH:LowWall": {
 "generate/physics": true,
 "physics/shape_type": 2
