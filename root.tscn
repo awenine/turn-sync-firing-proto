@@ -28,4 +28,4 @@ shadow_enabled = true
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.996387, 0, 0.0849301, 0, 1, 0, -0.0849301, 0, -0.996387, 1.48683, 3.42751, -12.66)
 
-[node name="Node3D" parent="." instance=ExtResource("1_yubld")]
+[node name="Level" parent="." instance=ExtResource("1_yubld")]
